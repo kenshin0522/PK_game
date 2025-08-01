@@ -16,15 +16,9 @@ class TextDisplay:
         self.screen.blit(text_surface, (x, y))
 
     def draw_turn(self, screen, turn_text):
-        font = pygame.font.SysFont(self.font_name, 60)
-        text_surface = font.render(turn_text, True, (0, 0, 255))  
-        x = (screen.get_width() - text_surface.get_width()) // 2
-        y = (screen.get_height() - text_surface.get_height()) // 2
-        screen.blit(text_surface, (x, y))
+        # draw_text を利用して共通化
+        self.draw_text(turn_text, screen.get_height() // 2 - 30, size=60, color=(0, 0, 255))
 
     def draw_result(self, screen, result_text):
-        font = pygame.font.SysFont(self.font_name, 60)
-        text_surface = font.render(result_text, True, (0, 0, 255))  
-        x = (screen.get_width() - text_surface.get_width()) // 2
-        y = (screen.get_height() - text_surface.get_height()) // 2
-        screen.blit(text_surface, (x, y))
+        # draw_text を利用して共通化
+        self.draw_text(result_text, screen.get_height() // 2 - 30, size=60, color=(0, 0, 255))
